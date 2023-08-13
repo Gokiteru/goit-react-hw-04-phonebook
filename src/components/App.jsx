@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { nanoid } from 'nanoid';
 import ContactForm from './ContactForm/ContactForm';
 import ContactList from './ContactList/ContactList';
@@ -26,6 +26,7 @@ function App() {
 
   useEffect(() => {
     localStorage.setItem('contactList', JSON.stringify(contacts));
+    console.log(contacts)
   }, [contacts]);
 
   const handleChange = e => {
@@ -79,17 +80,12 @@ function App() {
     >
       <h1>Phonebook</h1>
       <ContactForm
-        name={name}
-        number={number}
         handleSubmit={handleSubmit}
-        handleChange={handleChange}
       />
       <h2> Contacts</h2>
       <Filter filter={filter} handleChange={handleChange} />
       <ContactList
-        filter={filter}
         contacts={getFilteredContacts}
-        handleChange={handleChange}
         handleDelete={handleDelete}
       />
     </div>

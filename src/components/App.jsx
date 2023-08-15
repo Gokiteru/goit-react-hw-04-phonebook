@@ -12,8 +12,6 @@ function App() {
     { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
   ]);
   const [filter, setFilter] = useState('');
-  const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
 
   useEffect(() => {
     const contactsFromLocalStorage = localStorage.getItem('contactList');

@@ -24,7 +24,6 @@ function App() {
 
   useEffect(() => {
     localStorage.setItem('contactList', JSON.stringify(contacts));
-    console.log(contacts)
   }, [contacts]);
 
   const handleChange = e => {
